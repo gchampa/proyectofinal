@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div style="margin: 20px 0 ; text-align:center">
+
+    <form action='' method='POST'>
+        {% csrf_token %}
+        Ingrese mail del propietario: <input type='text' name="email">
+        <input type="submit" value="Enviar">
+    </form>
+    <a href="{% url 'home' %}"> Home</a>  
+    
+    {% if elements%}
+    <h1> Resultados </h1>
+
+        
+        {% for element in elements %}
+            <p>{{ element.name }}</p>
+            <p>{{ element.lastname }}</p>
+            <p>{{ element.email }}</p>
+        {% endfor %}
+
+
+    {% endif %}
+
+</div>
+{% endblock %}
+

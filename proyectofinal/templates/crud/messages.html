@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Mensajes</h1>
+  {% for message in messages %}
+        Usuario: <b>{{ message.user }}</b>  Mensaje: {{ message.mesg }}
+        Fecha: {{ message.date }}
+        <br></br>
+  {% endfor %}
+  <br></br>
+  <br></br>
+  <h1> Subir Mensaje</h1>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {{ form.as_table }}
+        <input type='submit' value="Enviar" >
+    </form>   
+
+  <a href="{% url 'home' %}"> Home</a>  
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Actualizar Contraseña</title>
+</head>
+<body>
+    <h1>Usuario: {{user}}</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+        {{form.as_table}}
+        </p>
+        <p>
+        {% block jumbotron %}
+          <!-- Jumbotron -->
+          <div class="jumbotron">
+            <h1>Image uploader</h1>
+            <p class="lead">This is just a simple view to upload images to an album.</p>
+      
+          </div>
+        {% endblock %}
+        </p>
+        <input type="submit", value="Enviar">
+        <a href="{% url 'home' %}"> Home</a>
+    </form>
+</body>
+</html>

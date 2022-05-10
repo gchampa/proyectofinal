@@ -1,0 +1,30 @@
+
+    <!doctype html>
+    <html>
+    <head>
+    <title>Iniciar Sesión</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+    </head>
+    <body>
+
+        {% if message %}
+            <h1>{{message}}  </h1>
+            <form>
+                <a href="http://127.0.0.1:8000/taller/login/">
+                <input type="button" value="Volver">
+                </a>
+            </form>
+        {% else %}
+            <form action="" method="POST">
+
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Iniciar Sesión</button>
+            <a href="http://127.0.0.1:8000">
+            <input type="button" value="Home">
+            </form>
+        {% endif %}
+
+    </body>
+    </html>

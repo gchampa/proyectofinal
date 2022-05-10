@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title></title>
+<style>
+    input{
+        border-color: blue
+    }
+</style>
+</head>
+
+<body>
+  <h1> Crear Vehiculo</h1>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {{ form.as_table }}
+        <input type='submit' value="Enviar" >
+    </form>
+    <a href="{% url 'home' %}"> Home</a>  
+    
+
+</body>
+
+</html>

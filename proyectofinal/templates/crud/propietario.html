@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Propietarios</h1>
+  <a href="{% url 'taller:propietario-create' %}"> Crear Propietario </a>
+  {% for propietario in propietarios%}
+        <p> Propietario: {{ propietario.name }} {{ propietario.lastname }} {{ propietario.email }} <a href="{% url 'taller:propietario-delete' propietario.id  %}">Eliminar</a> - <a href="{% url 'taller:propietario-update' propietario.id  %}"> Update</a>  </p>
+        </br>
+  {% endfor %}
+  <a href="{% url 'home' %}"> Home</a>  
+</body>
+
+</html>

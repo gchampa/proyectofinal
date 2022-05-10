@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Title of the document</title>
+<style>
+    input{
+        border-color: blue
+    }
+</style>
+</head>
+
+<body>
+  <h1> Crear Propietario</h1>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {{ form.as_table }}
+        <input type='submit' value="Enviar" >
+    </form>
+    <a href="{% url 'home' %}"> Home</a>    
+
+</body>
+
+</html>

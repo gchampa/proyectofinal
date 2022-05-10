@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Talleres</h1>
+  <a href="{% url 'taller:taller-create' %}"> Crear Taller </a>
+  {% for taller in talleres%}
+        <p> taller: {{ taller.name }} {{ taller.address }} {{ taller.city }} <a href="{% url 'taller:taller-delete' taller.id  %}">Eliminar</a> - <a href="{% url 'taller:taller-update' taller.id  %}"> Update</a>  </p>
+        </br>
+  {% endfor %}
+  <a href="{% url 'home' %}"> Home</a>  
+</body>
+
+</html>
